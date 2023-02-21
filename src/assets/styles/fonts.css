@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Julee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap');
+
+@font-face {
+  font-family: Georgia;
+  src: url("../fonts/Georgia/Georgia.ttf");
+}
+
+@font-face {
+  font-family: Verdana;
+  src: url("../fonts/Verdana/verdana.ttf");
+}
