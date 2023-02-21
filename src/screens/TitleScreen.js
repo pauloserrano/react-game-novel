@@ -30,10 +30,13 @@ const Wrapper = styled.main`
     font-size: 6rem;
     font-family: 'Julee', cursive;
     margin-bottom: 1em;
-    color: black;
-    -webkit-text-fill-color: white;
-    -webkit-text-stroke-width: 1.25px;
-    -webkit-text-stroke-color: black;
+    color: white;
+    text-shadow: 
+      -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000
+    ;
   }
 
   nav{

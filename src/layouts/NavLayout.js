@@ -19,12 +19,12 @@ NavLayout.Menu = ({ children }) => {
   )
 }
 
-NavLayout.MenuItem = ({ Icon, children, ...otherProps }) => {
+NavLayout.MenuItem = ({ Icon, name, ...otherProps }) => {
   return (
     <li>
       <button {...otherProps}>
         <Icon style={{}}/>
-        <span>{children}</span>
+        <span>{name}</span>
       </button>
     </li>
   )
@@ -56,6 +56,8 @@ const MenuWrapper = styled.ul`
   
     svg {
       height: 100%;
+      aspect-ratio: 1 / 1;
+      padding: 2px;
       border: 1px solid var(--color-primary);
       background-color: black;
 
@@ -71,11 +73,12 @@ const MenuWrapper = styled.ul`
       font-family: "Comfortaa", sans-serif;
       font-size: min(1rem, 1.75vw);
       text-align: left;
+      white-space: nowrap;
       color: white;
       height: 100%;
-      padding-block: 0.75em;
+      padding-block: 0.25em;
       padding-inline-start: 1.25em;
-      padding-inline-end: 2.5em;
+      padding-inline-end: 2em;
       margin-inline-start: 0.5rem;
       border-radius: 1.5rem 0 0 1.5rem;
       background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1));
@@ -88,10 +91,15 @@ const MenuWrapper = styled.ul`
   }
 
 
-  li:hover, li button:focus{
+  li:hover, li button:focus-visible{
+    svg{
+      filter: drop-shadow(0 0 1em var(--color-primary))
+    }
+
     span{
       color: black;
       font-weight: 700;
+      padding-inline-start: 1.75em;
       background: linear-gradient(to right, var(--color-primary), rgba(0, 0, 0, 0.1));
     }
   }
