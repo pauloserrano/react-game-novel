@@ -18,7 +18,7 @@ export function TimeWheel() {
 
 const Wrapper = styled.div`
   position: absolute;
-  width: 400px;
+  width: min(400px, 40vw);
   aspect-ratio: 1 / 1;
   top: 0;
   left: 0;
@@ -43,8 +43,9 @@ const Wrapper = styled.div`
   h3{
     position: relative;
     right: 2.5em;
+    width: fit-content;
     font-family: "Comfortaa", sans-serif;
-    font-size: 2.5rem;
+    font-size: min(2.5rem, 4vw);
     font-weight: 700;
     text-shadow: 
       0px 4px 4px rgba(0, 0, 0, 0.25),
@@ -59,9 +60,9 @@ const Wrapper = styled.div`
     position: relative;
     inset: 1em 0 0 -4em;
     width: fit-content;
-    font-size: 1.125rem;
+    font-size: min(1.125rem, 2vw);
     font-family: "Verdana", sans-serif;
-    padding: 0.125em 2rem;
+    padding: 0.125em 1.75em;
     background-color: black;
     background-position: center;
     border-radius: 50px;
@@ -80,8 +81,8 @@ const Wrapper = styled.div`
     inset: calc(80% - 10px) 0 0 55%;
     width: 18%;
     height: 18%;
-    padding: 4px;
-    border: 10px solid var(--color-primary);
+    padding: 2px;
+    border: min(1vw, 10px) solid var(--color-primary);
     background-color: black;
     border-radius: 50%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
