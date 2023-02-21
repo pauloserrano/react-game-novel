@@ -15,6 +15,7 @@ const Wrapper = styled.button`
   font-family: 'Georgia', sans-serif;
   color: #D4D4D4;
   padding: 1rem 4rem;
+  outline: transparent;
   border: 1px solid #D4D4D4;
   border-radius: 0.75rem;
   background-color: #262626;
@@ -22,7 +23,7 @@ const Wrapper = styled.button`
   transform: translateY(0);
   cursor: pointer;
 
-  &:hover{
+  &:hover, &:focus{
     border: 1px solid transparent;
     background:
       linear-gradient(#262626, #262626) padding-box,

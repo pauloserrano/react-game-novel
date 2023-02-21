@@ -17,20 +17,34 @@ NavLayout.Menu = () => {
   return (
     <MenuWrapper>
       <li>
-        <SunCloud style={{}}/>
-        <span>Lorem Ipsum</span>
+        <button>
+          <SunCloud style={{}}/>
+          <span>Lorem Ipsum</span>
+        </button>
       </li>
       <li>
-        <SunCloud style={{}}/>
-        <span>Lorem Ipsum</span>
+        <button>
+          <SunCloud style={{}}/>
+          <span>Lorem Ipsum</span>
+        </button>
       </li>
       <li>
-        <SunCloud style={{}}/>
-        <span>Lorem Ipsum</span>
+        <button>
+          <SunCloud style={{}}/>
+          <span>Lorem Ipsum</span>
+        </button>
       </li>
       <li>
-        <SunCloud style={{}}/>
-        <span>Lorem Ipsum</span>
+        <button>
+          <SunCloud style={{}}/>
+          <span>Lorem Ipsum</span>
+        </button>
+      </li>
+      <li>
+        <button>
+          <SunCloud style={{}}/>
+          <span>Lorem Ipsum</span>
+        </button>
       </li>
     </MenuWrapper>
   )
@@ -50,10 +64,15 @@ const MenuWrapper = styled.ul`
   left: 3rem;
 
   li{
-    display: flex;
-    align-items: center;
-    height: 2.5rem;
-    cursor: pointer;
+    button{
+      display: flex;
+      align-items: center;
+      height: 2.5rem;
+      outline: transparent;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
     
     svg{
       height: 100%;
@@ -66,17 +85,21 @@ const MenuWrapper = styled.ul`
     }
 
     span{
+      font-family: "Comfortaa", sans-serif;
+      font-size: 1rem;
+      text-align: left;
       color: white;
       min-width: 250px;
-      padding: 0.75rem 1rem;
+      padding: 0.75rem 1.25rem;
       margin-left: 0.5rem;
       border-radius: 1.5rem 0 0 1.5rem;
       background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1));
     }
-    
-    &:hover{
+  
+    &:hover, & button:focus{
       span{
         color: black;
+        font-weight: 700;
         background: linear-gradient(to right, var(--color-primary), rgba(0, 0, 0, 0.1));
       }
     }
@@ -85,7 +108,7 @@ const MenuWrapper = styled.ul`
       margin-block-end: 0.75rem;
     }
     
-    * {
+    svg, span {
       transition: all 0.1s ease-out;
       pointer-events: none;
     }
