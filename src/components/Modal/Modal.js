@@ -17,6 +17,7 @@ const Wrapper = styled.section`
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   border: 2px solid black;
+  animation: slide-in .1s ease-out;
 
   header{
     position: absolute;
@@ -29,7 +30,6 @@ const Wrapper = styled.section`
     background-color: black;
     border-radius: 10px;
     font-size: 1.5rem;
-
   }
 
   h2{
@@ -38,5 +38,17 @@ const Wrapper = styled.section`
     font-family: "Amita", cursive;
     font-weight: 700;
     background: linear-gradient(to bottom, var(--color-primary) 30%, var(--color-secondary)) text;
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 `

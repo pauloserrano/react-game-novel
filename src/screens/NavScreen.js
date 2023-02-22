@@ -1,11 +1,10 @@
-import { NavLayout } from "layouts/NavLayout";
-import { Run, StabbedNote } from "components/Icons";
-import { Modal } from "components/Modal";
 import { useState } from "react";
-
+import { NavLayout } from "layouts";
+import { Modal, Run, StabbedNote } from "components";
 
 export function NavScreen() {
   const [showModal, setShowModal] = useState(false)
+
   return (
     <NavLayout>
       <NavLayout.Menu>

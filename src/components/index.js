@@ -1,2 +1,6 @@
 export * from "./Button"
 export * from "./TimeWheel"
+export * from "./Icons"
+export * from "./Modal"
+export * from "./Menu"
+export * from "./HUD"

@@ -1,11 +1,13 @@
+import { useEffect, useRef } from 'react'
 import styled from 'styled-components'
-import { TimeWheel } from 'components'
+import { HUD } from 'components'
 import bg from "assets/images/background/human-city.jpg"
+import { useAudioContext } from 'hooks'
 
 export function NavLayout({children}) {
   return (
     <Wrapper>
-      <TimeWheel />
+      <HUD />
       {children}
     </Wrapper>
   )
@@ -19,9 +21,21 @@ NavLayout.Menu = ({ children }) => {
   )
 }
 
-NavLayout.MenuItem = ({ Icon, name, ...otherProps }) => {
+NavLayout.MenuItem = ({...props }) => <MenuItem {...props} />
+
+function MenuItem({ Icon, name, ...otherProps }) {
+  const itemRef = useRef()
+  const { state, dispatch } = useAudioContext()
+
+  useEffect(() => {
+    itemRef.current.addEventListener("click", () => console.log(itemRef))
+
+    return itemRef.current.removeEventListener("click", () => console.log(itemRef))
+    
+  }, [])
+
   return (
-    <li>
+    <li ref={itemRef}>
       <button {...otherProps}>
         <Icon style={{}}/>
         <span>{name}</span>
