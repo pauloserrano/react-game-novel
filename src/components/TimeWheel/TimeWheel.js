@@ -4,7 +4,7 @@ import { ReactComponent as SunCloud } from "assets/icons/sun-cloud.svg"
 
 export function TimeWheel() {
   return (
-    <Wrapper>
+    <Wrapper size={0.8}>
       <span>
         <h3>Morning</h3>
         <p>Wednesday</p>
@@ -18,22 +18,22 @@ export function TimeWheel() {
 
 const Wrapper = styled.div`
   position: absolute;
-  width: min(400px, 40vw);
-  aspect-ratio: 1 / 1;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  border: 12px solid transparent;
-  padding: 12px;
+  font-size: ${props => props.size && `${props.size}rem`};
+  width: 25em;
+  height: 25em;
   transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 0.5em solid transparent;
+  padding: 0.5em;
+
+  outline: 0.25em solid #717171;
+  outline-offset: -1.2em;
+  background-origin: border-box;
   background:
     url(${Afternoon}) content-box,
     linear-gradient(black, black) padding-box,
     linear-gradient(180deg, #4F4F93, var(--color-primary)) border-box
   ;
-  outline: 8px solid #717171;
-  outline-offset: -30px;
-  background-origin: border-box;
   
   span{
     position: relative;
@@ -45,7 +45,7 @@ const Wrapper = styled.div`
     right: 2.5em;
     width: fit-content;
     font-family: "Comfortaa", sans-serif;
-    font-size: min(2.5rem, 4vw);
+    font-size: 2.5em;
     font-weight: 700;
     text-shadow: 
       0px 4px 4px rgba(0, 0, 0, 0.25),
@@ -60,7 +60,7 @@ const Wrapper = styled.div`
     position: relative;
     inset: 1em 0 0 -4em;
     width: fit-content;
-    font-size: min(1.125rem, 2vw);
+    font-size: 1.125em;
     font-family: "Verdana", sans-serif;
     padding: 0.125em 1.75em;
     background-color: black;
@@ -77,15 +77,15 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    inset: calc(80% - 10px) 0 0 55%;
-    width: 18%;
-    height: 18%;
-    padding: 2px;
-    border: min(1vw, 10px) solid var(--color-primary);
+    position: absolute;
+    inset: 88% 0 0 60%;
+    width: 15%;
+    height: 15%;
+    padding: 0.125em;
+    border: 0.5em solid var(--color-primary);
     background-color: black;
     border-radius: 50%;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.25);
 
     svg path{
       fill: var(--color-primary);

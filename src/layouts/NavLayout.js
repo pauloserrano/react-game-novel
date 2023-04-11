@@ -1,12 +1,17 @@
 import { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { HUD } from 'components'
-import bg from "assets/images/background/human-city.jpg"
 import { useAudioContext } from 'hooks'
 
-export function NavLayout({children}) {
+export function NavLayout({background, track, children}) {
+  const { dispatch, ACTIONS } = useAudioContext()
+
+  useEffect(() => {
+    dispatch({ type: ACTIONS.SET_MUSIC, payload: track })
+  }, [])
+
   return (
-    <Wrapper>
+    <Wrapper background={background}>
       <HUD />
       {children}
     </Wrapper>
@@ -25,14 +30,6 @@ NavLayout.MenuItem = ({...props }) => <MenuItem {...props} />
 
 function MenuItem({ Icon, name, ...otherProps }) {
   const itemRef = useRef()
-  const { state, dispatch } = useAudioContext()
-
-  useEffect(() => {
-    itemRef.current.addEventListener("click", () => console.log(itemRef))
-
-    return itemRef.current.removeEventListener("click", () => console.log(itemRef))
-    
-  }, [])
 
   return (
     <li ref={itemRef}>
@@ -45,7 +42,7 @@ function MenuItem({ Icon, name, ...otherProps }) {
 }
 
 const Wrapper = styled.div`
-  background: url(${bg}) no-repeat center;
+  background: url(${props => props.background}) no-repeat center;
   background-size: cover;
 `
 

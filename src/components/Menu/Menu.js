@@ -13,7 +13,7 @@ export function Menu() {
   return (
     <Wrapper>
       <button onClick={toggleAudio}>
-        { state.muted 
+        {state.muted 
           ? <SongMuted className='muted' style={{}} /> 
           : <SongPlaying className='playing' style={{}} />
         }
