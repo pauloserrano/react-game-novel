@@ -1,23 +1,17 @@
-import { useState } from "react";
 import { NavLayout } from "layouts";
-import { Modal, Run, StabbedNote } from "components";
-import music from "assets/music/harp.mp3"
-import bg from "assets/images/background/human-city.jpg"
+import { CITIES } from "data"
 
 export function NavScreen() {
-  const [showModal, setShowModal] = useState(false)
-
   return (
-    <NavLayout background={bg} track={music}>
+    <NavLayout 
+      background={CITIES.humanCapital.backgroundImage} 
+      track={CITIES.humanCapital.backgroundMusic}
+    >
       <NavLayout.Menu>
-        <NavLayout.MenuItem 
-          Icon={StabbedNote} 
-          name={"Notice Board"}
-          onClick={() => setShowModal(prev => !prev)}
-        />
-        <NavLayout.MenuItem Icon={Run} name={"Leave"} />
+        {CITIES.humanCapital.navigation.map(props => (
+          <NavLayout.MenuItem {...props} />
+        ))}
       </NavLayout.Menu>
-      {showModal && <Modal />}
     </NavLayout>
   )
 }

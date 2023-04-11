@@ -8,6 +8,7 @@ export function NavLayout({background, track, children}) {
 
   useEffect(() => {
     dispatch({ type: ACTIONS.SET_MUSIC, payload: track })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -28,7 +29,7 @@ NavLayout.Menu = ({ children }) => {
 
 NavLayout.MenuItem = ({...props }) => <MenuItem {...props} />
 
-function MenuItem({ Icon, name, ...otherProps }) {
+function MenuItem({ icon: Icon, name, ...otherProps }) {
   const itemRef = useRef()
 
   return (
@@ -92,7 +93,7 @@ const MenuWrapper = styled.ul`
       padding-inline-end: 2em;
       margin-inline-start: 0.5rem;
       border-radius: 1.5rem 0 0 1.5rem;
-      background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1));
+      background: linear-gradient(to right, black 50%, rgba(0, 0, 0, 0.1));
     }
 
     svg, span {
@@ -111,7 +112,7 @@ const MenuWrapper = styled.ul`
       color: black;
       font-weight: 700;
       padding-inline-start: 1.75em;
-      background: linear-gradient(to right, var(--color-primary), rgba(0, 0, 0, 0.1));
+      background: linear-gradient(to right, var(--color-primary) 50%, rgba(0, 0, 0, 0.1));
     }
   }
 `
