@@ -16,7 +16,7 @@ const ACTIONS = Object.freeze({
 })
 
 const reducer = (state, action) => {
-  console.log({ state, action })
+  //console.log({ state, action })
   switch (action.type) {
     case ACTIONS.PLAY_SFX:
       state.sfxSrc = action.payload

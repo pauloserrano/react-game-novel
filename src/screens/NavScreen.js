@@ -1,14 +1,16 @@
 import { NavLayout } from "layouts";
-import { CITIES } from "data"
+import { useGMContext } from "hooks";
 
 export function NavScreen() {
+  const { state } = useGMContext()
+
   return (
     <NavLayout 
-      background={CITIES.humanCapital.backgroundImage} 
-      track={CITIES.humanCapital.backgroundMusic}
+      background={state.currentMap.backgroundImage} 
+      track={state.currentMap.backgroundMusic}
     >
       <NavLayout.Menu>
-        {CITIES.humanCapital.navigation.map(props => (
+        {state.currentMap.navigation.map(props => (
           <NavLayout.MenuItem {...props} />
         ))}
       </NavLayout.Menu>

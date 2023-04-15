@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { SongMuted, SongPlaying } from 'components'
 import { useAudioContext } from 'hooks'
 
-export function Menu() {
+export function AudioButton() {
   const { state, dispatch, ACTIONS } = useAudioContext()
 
   const toggleAudio = () => {

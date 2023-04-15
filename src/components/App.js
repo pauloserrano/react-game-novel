@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavScreen } from "screens";
-import { AudioProvider } from "hooks";
+import { AudioProvider, GMProvider } from "hooks";
 
 import "assets/styles/reset.css"
 import "assets/styles/fonts.css"
@@ -9,7 +9,11 @@ export default function App() {
   return (
     <GlobalStyle>
       <AudioProvider>
-        <NavScreen />
+        <GMProvider>
+
+          <NavScreen />
+
+        </GMProvider>
       </AudioProvider>
     </GlobalStyle>
   );

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import styled from 'styled-components'
-import { HUD } from 'components'
+import { TimeWheel, AudioButton } from 'components'
 import { useAudioContext } from 'hooks'
 
 export function NavLayout({background, track, children}) {
@@ -13,7 +13,8 @@ export function NavLayout({background, track, children}) {
 
   return (
     <Wrapper background={background}>
-      <HUD />
+      <TimeWheel />
+      <AudioButton />
       {children}
     </Wrapper>
   )
@@ -28,6 +29,7 @@ NavLayout.Menu = ({ children }) => {
 }
 
 NavLayout.MenuItem = ({...props }) => <MenuItem {...props} />
+
 
 function MenuItem({ icon: Icon, name, ...otherProps }) {
   const itemRef = useRef()
